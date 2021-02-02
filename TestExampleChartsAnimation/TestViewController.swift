@@ -9,9 +9,8 @@ import UIKit
 
 class TestViewController: UIViewController {
     
-    @IBOutlet weak var pageViewControllerHolderView: UIView!
-    @IBOutlet weak var legendViewHeighConstraint: NSLayoutConstraint!
-    
+    @IBOutlet private weak var pageViewControllerHolderView: UIView!
+    @IBOutlet private weak var legendViewHeighConstraint: NSLayoutConstraint!
     
     private lazy var pageViewController: UIPageViewController = {
         return UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)

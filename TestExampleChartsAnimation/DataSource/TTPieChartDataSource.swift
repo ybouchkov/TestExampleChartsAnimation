@@ -11,6 +11,7 @@ import Charts
 class TTPieChartDataSource {
     var chartTitle: String = ""
     var percentValues: [(value:Int, color:UIColor, legendTitle: String?)] = []
+    var miniChartViewColors: [UIColor] = []
     var sumTitle = ""
     var sumInfo = ""
     
@@ -26,8 +27,15 @@ class TTPieChartDataSource {
         percentValues.append((value: 10, color: UIColor.lightGreyBlue, legendTitle: "Legend 6"))
     }
     
+    func applyMiniChartColors() {
+        sumTitle = "Total"
+        sumInfo = "R 5300,444.00"
+        miniChartViewColors = percentValues.map { $0.color }
+    }
+    
     init() {
         applyDummyData()
+        applyMiniChartColors()
     }
 }
 
@@ -56,10 +64,10 @@ extension TTPieChartDataSource: PieChartDataSource {
     }
     
     func dataSumTitle() -> String {
-        return sumTitle
+        return sumTitle // localise
     }
     
     func dataSumInfo() -> String {
-        return sumInfo
+        return sumInfo // localise
     }
 }
