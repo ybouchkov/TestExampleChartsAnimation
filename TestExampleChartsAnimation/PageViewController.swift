@@ -22,24 +22,72 @@ class PageViewController: UIViewController {
     @IBOutlet private weak var headerRowHeighConstraint: NSLayoutConstraint!
     @IBOutlet private weak var headerRowTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var headerRowView: UIView!
+    @IBOutlet private weak var pieChartContainerView: UIView!
+    @IBOutlet private weak var pieChartContainerViewHeighConstraint: NSLayoutConstraint!
+    
+    enum PieChatHeaderMode {
+        case collapsed
+        case expanded
+    }
     
     var pageIndex: Int = 0
     private var legendView: LegendView!
     
     var didMoveToNextPageViewController: (() -> Void)?
     var didMoveToPreviousPageViewController: (() -> Void)?
+    var didHideLegendView: (() -> Void)?
+    var didShowLegendView: (() -> Void)?
 
     var dataSource = TTPieChartDataSource()
+    var pieChartMode: PieChatHeaderMode = .expanded
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addData()
         setHeaderRowView()
+        setupViewsAccordingToMode()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         applySourceWithAnimation()
+    }
+    
+    private func setupViewsAccordingToMode() {
+        switch pieChartMode {
+        case .collapsed:
+            setCollapsedView()
+        case .expanded:
+            setExpandedView()
+        }
+    }
+        
+    func performAnimationOnHeaderRowViewAppear() {
+        
+    }
+    
+    private func setCollapsedView() {
+        headerRowHeighConstraint.constant = 40.0
+        sumLbl.isHidden = false
+        totalLbl.isHidden = false
+        pieChartContainerViewHeighConstraint.constant = 0
+        miniPieChartView.isHidden = false
+        titleLabelHeighConstraint.constant = 0
+        testLbl.isHidden = true
+        nextButton.isHidden = true
+        previousButton.isHidden = true
+    }
+    
+    private func setExpandedView() {
+        miniPieChartView.isHidden = true
+        pieChartContainerViewHeighConstraint.constant = 280.0
+        headerRowHeighConstraint.constant = 0
+        sumLbl.isHidden = true
+        totalLbl.isHidden = true
+        titleLabelHeighConstraint.constant = 21
+        testLbl.isHidden = false
+        nextButton.isHidden = false
+        previousButton.isHidden = false
     }
     
     private func setHeaderRowView() {
@@ -70,8 +118,10 @@ class PageViewController: UIViewController {
         } else {
             testLbl.text = "Industry Location"
         }
-        self.nextButton.isHidden = pageIndex >= 1 ? true : false
-        self.previousButton.isHidden = pageIndex == 0 ? true : false
+        if pieChartMode == .expanded {
+            self.nextButton.isHidden = pageIndex >= 1 ? true : false
+            self.previousButton.isHidden = pageIndex == 0 ? true : false
+        }
         setAnimationOnAppear()
     }
             

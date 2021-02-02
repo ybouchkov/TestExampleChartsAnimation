@@ -10,7 +10,9 @@ import UIKit
 class TestViewController: UIViewController {
     
     @IBOutlet private weak var pageViewControllerHolderView: UIView!
+    @IBOutlet private weak var pageViewControllerHolderViewHeighConstraint: NSLayoutConstraint!
     @IBOutlet private weak var legendViewHeighConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var legendView: LegendView!
     
     private lazy var pageViewController: UIPageViewController = {
         return UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -19,6 +21,22 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageViewController()
+    }
+    
+    @IBAction func applyFirstAnimation(_ sender: UIButton) {
+        UIView.transition(with: pageViewControllerHolderView,
+                          duration: 1.5,
+                          options: .transitionCrossDissolve, animations: { [weak self] in
+                            self?.pageViewControllerHolderView.alpha = 0.3
+                            self?.legendView.alpha = 0.3
+                          }, completion: { _ in
+                            self.pageViewControllerHolderView.alpha = 0
+                            self.legendView.alpha = 0
+                          })
+        
+    }
+    
+    @IBAction func applySecondAnimation(_ sender: UIButton) {
     }
     
     private func setupPageViewController() {
@@ -51,6 +69,14 @@ class TestViewController: UIViewController {
     //for specified index
     func getPageFor(index: Int) -> PageViewController? {
         guard  let pageController  = self.storyboard?.instantiateViewController(identifier: "PageViewController") as? PageViewController else { return nil }
+        pageController.didShowLegendView = { [weak self] in
+            self?.legendView.isHidden = true
+            self?.legendViewHeighConstraint.constant = 0
+        }
+        pageController.didHideLegendView = { [weak self] in
+            self?.legendView.isHidden = false
+            self?.legendViewHeighConstraint.constant = 30.0
+        }
         pageController.pageIndex = index
         pageController.didMoveToNextPageViewController = { [weak self] in
             guard let strongSelf = self else {
@@ -64,6 +90,17 @@ class TestViewController: UIViewController {
             }
             strongSelf.pageViewController.goToPreviousPage()
         }
+        
+        if pageController.pieChartMode == .collapsed {
+            legendView.isHidden = true
+            legendViewHeighConstraint.constant = 0
+            pageViewControllerHolderViewHeighConstraint.constant = 60.0
+        } else {
+            legendView.isHidden = false
+            legendViewHeighConstraint.constant = 30.0
+            pageViewControllerHolderViewHeighConstraint.constant = 350.0
+        }
+        
         return pageController
     }
 }

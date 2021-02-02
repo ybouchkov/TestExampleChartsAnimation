@@ -30,21 +30,41 @@
                                     <constraint firstAttribute="height" constant="30" id="bxY-RK-8Ob"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDV-GM-h0K">
+                                <rect key="frame" x="16" y="832" width="93" height="30"/>
+                                <state key="normal" title="1st Animation"/>
+                                <connections>
+                                    <action selector="applyFirstAnimation:" destination="hrI-Os-HYf" eventType="touchUpInside" id="Pxl-WG-v0b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECE-6i-sQO">
+                                <rect key="frame" x="299" y="832" width="99" height="30"/>
+                                <state key="normal" title="2nd Animation"/>
+                                <connections>
+                                    <action selector="applySecondAnimation:" destination="hrI-Os-HYf" eventType="touchUpInside" id="XIU-2x-TTO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="StN-Jl-7FO"/>
                         <color key="backgroundColor" red="0.73575763313137754" green="0.75126315785103104" blue="0.65189044978342903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="MDV-GM-h0K" firstAttribute="leading" secondItem="StN-Jl-7FO" secondAttribute="leading" constant="16" id="1WW-ld-geG"/>
                             <constraint firstItem="v7c-8D-bul" firstAttribute="trailing" secondItem="YhO-TZ-nSo" secondAttribute="trailing" id="4Nw-mY-tU5"/>
                             <constraint firstItem="YhO-TZ-nSo" firstAttribute="top" secondItem="StN-Jl-7FO" secondAttribute="top" constant="16" id="4gL-9E-2A1"/>
+                            <constraint firstItem="StN-Jl-7FO" firstAttribute="trailing" secondItem="ECE-6i-sQO" secondAttribute="trailing" constant="16" id="Gst-kI-vIS"/>
                             <constraint firstItem="v7c-8D-bul" firstAttribute="leading" secondItem="YhO-TZ-nSo" secondAttribute="leading" id="Kd4-sN-Kch"/>
+                            <constraint firstItem="ECE-6i-sQO" firstAttribute="bottom" secondItem="StN-Jl-7FO" secondAttribute="bottom" id="Mmz-g5-G1F"/>
                             <constraint firstItem="v7c-8D-bul" firstAttribute="top" secondItem="YhO-TZ-nSo" secondAttribute="bottom" id="QHl-mA-ieE"/>
+                            <constraint firstItem="MDV-GM-h0K" firstAttribute="centerY" secondItem="ECE-6i-sQO" secondAttribute="centerY" id="SKP-lC-S7o"/>
                             <constraint firstItem="YhO-TZ-nSo" firstAttribute="leading" secondItem="StN-Jl-7FO" secondAttribute="leading" constant="20" id="Tyn-ar-dEv"/>
                             <constraint firstItem="StN-Jl-7FO" firstAttribute="trailing" secondItem="YhO-TZ-nSo" secondAttribute="trailing" constant="20" id="fTt-Gk-KNl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="legendView" destination="v7c-8D-bul" id="ejl-9F-SGO"/>
                         <outlet property="legendViewHeighConstraint" destination="bxY-RK-8Ob" id="GWR-zh-rUi"/>
                         <outlet property="pageViewControllerHolderView" destination="YhO-TZ-nSo" id="Er8-1e-eVv"/>
+                        <outlet property="pageViewControllerHolderViewHeighConstraint" destination="rf4-0A-WtA" id="9KW-UR-8eM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riQ-ht-rQf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -60,16 +80,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pV-tN-g6J">
-                                <rect key="frame" x="8" y="100" width="398" height="20.5"/>
+                                <rect key="frame" x="8" y="100" width="398" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20.5" id="wXU-5u-b1j"/>
+                                    <constraint firstAttribute="height" constant="21" id="wXU-5u-b1j"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cft-X7-uKW">
-                                <rect key="frame" x="8" y="128.5" width="398" height="280"/>
+                                <rect key="frame" x="8" y="129" width="398" height="280"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="BNy-ck-h6y">
                                         <rect key="frame" x="8" y="0.0" width="382" height="272"/>
@@ -158,6 +178,7 @@
                                     <constraint firstItem="CTJ-9f-CWy" firstAttribute="centerY" secondItem="Lh6-3h-Cxd" secondAttribute="centerY" id="SZ1-e5-yTp"/>
                                     <constraint firstItem="VrB-UE-Bpu" firstAttribute="centerY" secondItem="Lh6-3h-Cxd" secondAttribute="centerY" id="ScU-qz-2Ek"/>
                                     <constraint firstAttribute="height" constant="40" id="e58-jp-r5h"/>
+                                    <constraint firstItem="VrB-UE-Bpu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lh6-3h-Cxd" secondAttribute="trailing" constant="8" symbolic="YES" id="irh-dW-onv"/>
                                     <constraint firstItem="CTJ-9f-CWy" firstAttribute="leading" secondItem="WvR-Um-hHx" secondAttribute="leading" constant="16" id="ym9-la-xFN"/>
                                 </constraints>
                             </view>
@@ -185,8 +206,9 @@
                         <outlet property="headerRowView" destination="WvR-Um-hHx" id="DX1-BY-8us"/>
                         <outlet property="miniPieChartView" destination="CTJ-9f-CWy" id="eI2-Dx-9Oo"/>
                         <outlet property="nextButton" destination="TCj-kE-397" id="jqX-1U-euN"/>
+                        <outlet property="pieChartContainerView" destination="cft-X7-uKW" id="Zxl-IW-eho"/>
+                        <outlet property="pieChartContainerViewHeighConstraint" destination="zJI-dw-zbN" id="SmN-EE-ayd"/>
                         <outlet property="pieChartView" destination="y8O-FJ-S3C" id="Xha-FM-P5F"/>
-                        <outlet property="pieChartViewHeighConstraint" destination="zJI-dw-zbN" id="aWh-Gi-flm"/>
                         <outlet property="previousButton" destination="dzn-hK-UDx" id="78D-K3-qan"/>
                         <outlet property="sumLbl" destination="VrB-UE-Bpu" id="PgA-f8-0vZ"/>
                         <outlet property="testLbl" destination="7pV-tN-g6J" id="bNm-HO-HMs"/>
