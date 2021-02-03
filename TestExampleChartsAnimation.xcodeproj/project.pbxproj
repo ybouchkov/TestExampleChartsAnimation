@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		069BC352C4332A7EEBE697E7 /* Pods_TestExampleChartsAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DFDCEAC4DE3864D46EEBBF /* Pods_TestExampleChartsAnimation.framework */; };
+		373E826525CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E826425CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift */; };
+		373E826A25CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373E826925CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib */; };
 		3765AED125CA993400BBEB45 /* IndustryPieChartCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3765AED025CA993400BBEB45 /* IndustryPieChartCustomView.swift */; };
 		3765AEDA25CA994E00BBEB45 /* IndustryPieChartCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3765AED925CA994E00BBEB45 /* IndustryPieChartCustomView.xib */; };
 		37A0A28725C4308300A2DDC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A0A28625C4308300A2DDC9 /* AppDelegate.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		030E4E0E000780D847D35871 /* Pods-TestExampleChartsAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestExampleChartsAnimation.debug.xcconfig"; path = "Target Support Files/Pods-TestExampleChartsAnimation/Pods-TestExampleChartsAnimation.debug.xcconfig"; sourceTree = "<group>"; };
 		06DFDCEAC4DE3864D46EEBBF /* Pods_TestExampleChartsAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestExampleChartsAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		373E826425CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableFundsPieChartCustomView.swift; sourceTree = "<group>"; };
+		373E826925CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableFundsPieChartCustomView.xib; sourceTree = "<group>"; };
 		3765AED025CA993400BBEB45 /* IndustryPieChartCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustryPieChartCustomView.swift; sourceTree = "<group>"; };
 		3765AED925CA994E00BBEB45 /* IndustryPieChartCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndustryPieChartCustomView.xib; sourceTree = "<group>"; };
 		37A0A28325C4308300A2DDC9 /* TestExampleChartsAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestExampleChartsAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,8 @@
 			children = (
 				3765AED025CA993400BBEB45 /* IndustryPieChartCustomView.swift */,
 				3765AED925CA994E00BBEB45 /* IndustryPieChartCustomView.xib */,
+				373E826425CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift */,
+				373E826925CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib */,
 			);
 			path = "Selection Views";
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				37A0A29025C4308400A2DDC9 /* Assets.xcassets in Resources */,
 				37A0A28E25C4308300A2DDC9 /* Main.storyboard in Resources */,
 				3765AEDA25CA994E00BBEB45 /* IndustryPieChartCustomView.xib in Resources */,
+				373E826A25CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +407,7 @@
 				37EACAFD25C81DB100CC44ED /* NSObject+HLSExtensions.m in Sources */,
 				37EACB1525C829B700CC44ED /* PieChartDataSource.swift in Sources */,
 				3765AED125CA993400BBEB45 /* IndustryPieChartCustomView.swift in Sources */,
+				373E826525CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift in Sources */,
 				37EACA6325C7E93B00CC44ED /* PageViewController.swift in Sources */,
 				37EACB0725C8227F00CC44ED /* LegendView.swift in Sources */,
 				37EACB3D25C8396700CC44ED /* TTPieChartDataSource.swift in Sources */,
