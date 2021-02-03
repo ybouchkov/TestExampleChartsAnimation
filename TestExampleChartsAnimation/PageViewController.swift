@@ -36,6 +36,7 @@ class PageViewController: UIViewController {
     
     private var industryView: IndustryPieChartCustomView!
     private var availableFundsView: AvailableFundsPieChartCustomView!
+    private var otherView: OtherPieChartCustomView!
     
     var dataSetIndexToDeselect : Int = 0
 
@@ -213,19 +214,19 @@ class ChartValueFormatter: NSObject, IValueFormatter {
 
 extension PageViewController: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        if availableFundsView == nil {
-            let frame = CGRect(x: highlight.xPx - 50, y: highlight.yPx - 50, width: 130, height: 24)
-            availableFundsView = AvailableFundsPieChartCustomView(frame: frame)
-            availableFundsView.setupLbl(text: "Available Funds 10 %", lineColor: .lightGreyBlue)
-            pieChartView.addSubview(availableFundsView)
-            availableFundsView.fadeIn()
+        if industryView == nil {
+            let frame = CGRect(x: highlight.xPx - 50, y: highlight.yPx - 50, width: 121, height: 83)
+            industryView = IndustryPieChartCustomView(frame: frame)
+            industryView.setupLbl(boldText: "Internet Content & Information 40%", second: "Growthpoint 30&", third: "JSE Ltd 9%", last: "Sasco Ltd 6%", lineColor: .cerise)
+            pieChartView.addSubview(industryView)
+            industryView.fadeIn()
         }
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        if availableFundsView != nil {
-            availableFundsView.fadeOut()
-            availableFundsView = nil
+        if industryView != nil {
+            industryView.fadeOut()
+            industryView = nil
         }
     }
 }

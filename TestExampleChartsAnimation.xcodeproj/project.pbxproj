@@ -10,6 +10,10 @@
 		069BC352C4332A7EEBE697E7 /* Pods_TestExampleChartsAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DFDCEAC4DE3864D46EEBBF /* Pods_TestExampleChartsAnimation.framework */; };
 		373E826525CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E826425CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift */; };
 		373E826A25CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373E826925CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib */; };
+		373E827525CADC52004A3E36 /* OtherPieChartCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E827425CADC52004A3E36 /* OtherPieChartCustomView.swift */; };
+		373E827A25CADC74004A3E36 /* OtherPieChartCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373E827925CADC74004A3E36 /* OtherPieChartCustomView.xib */; };
+		373E828025CADFDB004A3E36 /* OtherPieChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E827E25CADFDB004A3E36 /* OtherPieChartTableViewCell.swift */; };
+		373E828125CADFDB004A3E36 /* OtherPieChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373E827F25CADFDB004A3E36 /* OtherPieChartTableViewCell.xib */; };
 		3765AED125CA993400BBEB45 /* IndustryPieChartCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3765AED025CA993400BBEB45 /* IndustryPieChartCustomView.swift */; };
 		3765AEDA25CA994E00BBEB45 /* IndustryPieChartCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3765AED925CA994E00BBEB45 /* IndustryPieChartCustomView.xib */; };
 		37A0A28725C4308300A2DDC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A0A28625C4308300A2DDC9 /* AppDelegate.swift */; };
@@ -54,6 +58,10 @@
 		06DFDCEAC4DE3864D46EEBBF /* Pods_TestExampleChartsAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestExampleChartsAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		373E826425CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableFundsPieChartCustomView.swift; sourceTree = "<group>"; };
 		373E826925CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableFundsPieChartCustomView.xib; sourceTree = "<group>"; };
+		373E827425CADC52004A3E36 /* OtherPieChartCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPieChartCustomView.swift; sourceTree = "<group>"; };
+		373E827925CADC74004A3E36 /* OtherPieChartCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPieChartCustomView.xib; sourceTree = "<group>"; };
+		373E827E25CADFDB004A3E36 /* OtherPieChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPieChartTableViewCell.swift; sourceTree = "<group>"; };
+		373E827F25CADFDB004A3E36 /* OtherPieChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPieChartTableViewCell.xib; sourceTree = "<group>"; };
 		3765AED025CA993400BBEB45 /* IndustryPieChartCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustryPieChartCustomView.swift; sourceTree = "<group>"; };
 		3765AED925CA994E00BBEB45 /* IndustryPieChartCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndustryPieChartCustomView.xib; sourceTree = "<group>"; };
 		37A0A28325C4308300A2DDC9 /* TestExampleChartsAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestExampleChartsAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +129,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		373E828525CAE020004A3E36 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				373E827E25CADFDB004A3E36 /* OtherPieChartTableViewCell.swift */,
+				373E827F25CADFDB004A3E36 /* OtherPieChartTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3765AED525CA993900BBEB45 /* Selection Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +145,9 @@
 				3765AED925CA994E00BBEB45 /* IndustryPieChartCustomView.xib */,
 				373E826425CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift */,
 				373E826925CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib */,
+				373E827425CADC52004A3E36 /* OtherPieChartCustomView.swift */,
+				373E827925CADC74004A3E36 /* OtherPieChartCustomView.xib */,
+				373E828525CAE020004A3E36 /* Cells */,
 			);
 			path = "Selection Views";
 			sourceTree = "<group>";
@@ -333,6 +353,8 @@
 				37A0A29325C4308400A2DDC9 /* LaunchScreen.storyboard in Resources */,
 				37EACB1025C822A300CC44ED /* LegendView.xib in Resources */,
 				37A0A29025C4308400A2DDC9 /* Assets.xcassets in Resources */,
+				373E827A25CADC74004A3E36 /* OtherPieChartCustomView.xib in Resources */,
+				373E828125CADFDB004A3E36 /* OtherPieChartTableViewCell.xib in Resources */,
 				37A0A28E25C4308300A2DDC9 /* Main.storyboard in Resources */,
 				3765AEDA25CA994E00BBEB45 /* IndustryPieChartCustomView.xib in Resources */,
 				373E826A25CAD416004A3E36 /* AvailableFundsPieChartCustomView.xib in Resources */,
@@ -402,10 +424,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373E828025CADFDB004A3E36 /* OtherPieChartTableViewCell.swift in Sources */,
 				37EACA4D25C7E55500CC44ED /* TestViewController.swift in Sources */,
 				37EACB2925C82F6A00CC44ED /* UIColor+PieChartAdditions.swift in Sources */,
 				37EACAFD25C81DB100CC44ED /* NSObject+HLSExtensions.m in Sources */,
 				37EACB1525C829B700CC44ED /* PieChartDataSource.swift in Sources */,
+				373E827525CADC52004A3E36 /* OtherPieChartCustomView.swift in Sources */,
 				3765AED125CA993400BBEB45 /* IndustryPieChartCustomView.swift in Sources */,
 				373E826525CAD40A004A3E36 /* AvailableFundsPieChartCustomView.swift in Sources */,
 				37EACA6325C7E93B00CC44ED /* PageViewController.swift in Sources */,

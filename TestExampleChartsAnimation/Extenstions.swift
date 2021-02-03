@@ -88,3 +88,54 @@ extension UIView {
         }
     }
 }
+
+extension UITableView {
+    
+    func registerCellWithReusableIdentifier<T: UITableViewCell >(_ cellType: T.Type) {
+        let name = String(describing: cellType)
+        let nib = UINib(nibName: name, bundle: nil)
+        self.register(nib, forCellReuseIdentifier: name)
+    }
+    
+    func registerCellsWithReusableIdentifiers<T: UITableViewCell>(_ cellTypes: [T.Type]) {
+        for cellType in cellTypes {
+            let name = String(describing: cellType)
+            let nib = UINib(nibName: name, bundle: nil)
+            self.register(nib, forCellReuseIdentifier: name)
+        }
+    }
+    
+    func registerHeader<T: UITableViewHeaderFooterView>(_ headerType: T.Type) {
+        let name = String(describing: headerType)
+        let nib = UINib(nibName: name, bundle: nil)
+        self.register(nib, forHeaderFooterViewReuseIdentifier: name)
+    }
+    
+    /// Reusable cell identifier is equal to cell type name
+    func dequeueReusableCell<T: UITableViewCell>(cellType: T.Type, indexPath: IndexPath? = nil) -> T? {
+        let identifier = String(describing: cellType)
+        
+        if let indexPath = indexPath, let cell = dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? T {
+            return cell
+        } else if let cell = dequeueReusableCell(withIdentifier: identifier) as? T {
+            return cell
+        }
+        
+        return nil
+    }
+    
+    func dequeueHeader<T: UITableViewHeaderFooterView>(_ headerType: T.Type) -> T {
+        let name = String(describing: headerType)
+        guard let cell = dequeueReusableHeaderFooterView(withIdentifier: name) as? T else {
+            fatalError("Could not dequeue cell with identifier: \(name)")
+        }
+        return cell
+    }
+    
+    // Default delay time = 0.5 seconds
+    // Pass delay time interval, as a parameter argument
+    func reloadDataAfterDelay(delayTime: TimeInterval) {
+        self.perform(#selector(self.reloadData), with: nil, afterDelay: delayTime)
+    }
+}
+
