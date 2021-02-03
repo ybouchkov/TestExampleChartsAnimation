@@ -10,8 +10,17 @@ import Charts
 
 class PageViewController: UIViewController {
     
+    internal enum SliceType {
+        case industry
+        case availableFunds
+    }
+    
     @IBOutlet private weak var testLbl: UILabel!
-    @IBOutlet private weak var pieChartView: PieChartView!
+    @IBOutlet private weak var pieChartView: PieChartView! {
+        didSet {
+            pieChartView.delegate = self
+        }
+    }
     @IBOutlet private weak var miniPieChartView: PieChartView!
     @IBOutlet private weak var nextButton: UIButton!
     @IBOutlet private weak var previousButton: UIButton!
@@ -25,6 +34,10 @@ class PageViewController: UIViewController {
     @IBOutlet private weak var pieChartContainerView: UIView!
     @IBOutlet private weak var pieChartContainerViewHeighConstraint: NSLayoutConstraint!
     
+    private var industryView: IndustryPieChartCustomView!
+    
+    var dataSetIndexToDeselect : Int = 0
+
     enum PieChatHeaderMode {
         case collapsed
         case expanded
@@ -60,10 +73,6 @@ class PageViewController: UIViewController {
         case .expanded:
             setExpandedView()
         }
-    }
-        
-    func performAnimationOnHeaderRowViewAppear() {
-        
     }
     
     private func setCollapsedView() {
@@ -198,5 +207,24 @@ class ChartValueFormatter: NSObject, IValueFormatter {
                 return ""
         }
         return numberFormatter.string(for: value)!
+    }
+}
+
+extension PageViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        if industryView == nil {
+            let frame = CGRect(x: highlight.xPx - 50, y: highlight.yPx - 50, width: 121, height: 83)
+            industryView = IndustryPieChartCustomView(frame: frame)
+            industryView.setupLbl(boldText: "Internet Content & Information 40%", second: "GrowthPoint 14%", third: "JSE Ltd 6%", last: "Sasol Ltd 20%", lineColor: .cerise)
+            pieChartView.addSubview(industryView)
+            industryView.fadeIn()
+        }
+    }
+    
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        if industryView != nil {
+            industryView.fadeOut()
+            industryView = nil
+        }
     }
 }

@@ -95,41 +95,41 @@
                                         <rect key="frame" x="8" y="0.0" width="382" height="272"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KO5-uZ-f5B">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="272"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="272"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzn-hK-UDx">
-                                                        <rect key="frame" x="5" y="121" width="30" height="30"/>
+                                                        <rect key="frame" x="-5" y="121" width="30" height="30"/>
                                                         <state key="normal" title="&lt;"/>
                                                         <connections>
                                                             <action selector="previousBtnPressed:" destination="LNN-g0-QmJ" eventType="touchUpInside" id="4p5-EN-3c7"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="dzn-hK-UDx" firstAttribute="centerX" secondItem="KO5-uZ-f5B" secondAttribute="centerX" id="72E-Kr-FeE"/>
-                                                    <constraint firstAttribute="width" constant="40" id="aLG-b8-M3p"/>
+                                                    <constraint firstAttribute="width" constant="20" id="aLG-b8-M3p"/>
                                                     <constraint firstItem="dzn-hK-UDx" firstAttribute="centerY" secondItem="KO5-uZ-f5B" secondAttribute="centerY" id="lmJ-m1-YFh"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8O-FJ-S3C" customClass="PieChartView" customModule="Charts">
-                                                <rect key="frame" x="42" y="0.0" width="298" height="272"/>
+                                                <rect key="frame" x="22" y="0.0" width="338" height="272"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIh-MF-Zn5">
-                                                <rect key="frame" x="342" y="0.0" width="40" height="272"/>
+                                                <rect key="frame" x="362" y="0.0" width="20" height="272"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCj-kE-397">
-                                                        <rect key="frame" x="5" y="121" width="30" height="30"/>
+                                                        <rect key="frame" x="-5" y="121" width="30" height="30"/>
                                                         <state key="normal" title="&gt;"/>
                                                         <connections>
                                                             <action selector="nextButtonPressed:" destination="LNN-g0-QmJ" eventType="touchUpInside" id="ZOP-ux-CrZ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="Tqw-AR-OVw"/>
+                                                    <constraint firstAttribute="width" constant="20" id="Tqw-AR-OVw"/>
                                                     <constraint firstItem="TCj-kE-397" firstAttribute="centerX" secondItem="tIh-MF-Zn5" secondAttribute="centerX" id="gS0-P9-lUa"/>
                                                     <constraint firstItem="TCj-kE-397" firstAttribute="centerY" secondItem="tIh-MF-Zn5" secondAttribute="centerY" id="wHz-Vp-l80"/>
                                                 </constraints>
